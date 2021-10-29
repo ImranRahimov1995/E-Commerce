@@ -11,9 +11,11 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+
     <div id="header">
         <a href="/" class="logo">My shop</a>
     </div>
+
     <div id="subheader">
         <div class="cart">
             {% with total_items=cart|length %}
@@ -28,8 +30,10 @@
             {% endwith %}
         </div>
     </div>
+
     <div id="content">
         {% block content%}{% endblock content %}
     </div>
+    
 </body>
 </html>
