@@ -9,6 +9,7 @@ INSTALLED_APPS = [
     #my apps
     'shop',
     'cart',
+    'orders',
     #__________
     'django.contrib.admin',
     'django.contrib.auth',
