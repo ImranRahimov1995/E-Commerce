@@ -19,7 +19,9 @@ def order_create(request):
         form = OrderCreateForm(request.POST)
         if form.is_valid():
             order = form.save(commit=False)
-
+            if cart.coupon:
+                order.coupon = cart.coupon
+                order.discount = cart.coupon.discount
             order.save()
             products = []
             for item in cart:

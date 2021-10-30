@@ -11,7 +11,7 @@ INSTALLED_APPS = [
     'cart',
     'orders',
     'payment',
-
+    'coupons',
     #__________
     'django.contrib.admin',
     'django.contrib.auth',
