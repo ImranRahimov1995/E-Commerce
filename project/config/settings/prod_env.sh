@@ -6,6 +6,3 @@ cd ..
 cd ..
 
 python3 manage.py migrate --settings=config.settings.pro
-
-
-

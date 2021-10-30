@@ -9,11 +9,12 @@ from django.conf  import settings
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 import weasyprint
-
+from shop.recommender import Recommender
 
 
 def order_create(request):
     cart = Cart(request)
+    r = Recommender()
 
     if request.method == 'POST':
         form = OrderCreateForm(request.POST)
@@ -31,6 +32,7 @@ def order_create(request):
                                          price=item['price'],
                                          quantity=item['quantity'])
                 products.append(item['product'])
+                r.products_bought(products)
 
             order_id = (order.id)
             cart.clear()
