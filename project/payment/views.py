@@ -1,8 +1,13 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from django.urls import reverse
-
 import braintree
+from django.shortcuts import render, redirect, get_object_or_404
 from orders.models import Order
+from .tasks import send_order_pdf
+
+
+
+
+
+
 
 def payment_process(request,order_id):
 
@@ -24,6 +29,8 @@ def payment_process(request,order_id):
             #Save transaction id in order model.
             order.braintree_id = result.transaction.id
             order.save()
+            order_id = str(order.id)
+            send_order_pdf.delay(order_id)
             return redirect('payment:done')
         else:
             return redirect('payment:canceled')
