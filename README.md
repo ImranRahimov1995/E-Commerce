@@ -25,3 +25,17 @@ This is E-Commerce project my lesson-project which i learned from  book
 You can see all installed library and relations in project/requirements.txt
 
 _________________________________________________________________________________
+# Get started
+
+1. git clone https://github.com/ImranRahimov1995/E-Commerce-Mele.git
+2. python3 -m venv venv || source venv/bin/activate
+
+All commands must starting from project/
+pip3 install -r requirements.txt
+
+# This is your local settings export your local settings for ENVOIRMENT and run some commands:
+
+open project/config/settings
+
+run this command:
+. ./local_env.sh
