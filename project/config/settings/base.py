@@ -10,6 +10,8 @@ INSTALLED_APPS = [
     'shop',
     'cart',
     'orders',
+    'payment',
+
     #__________
     'django.contrib.admin',
     'django.contrib.auth',
@@ -18,7 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #3rd-part
-    
+
 ]
 
 MIDDLEWARE = [
@@ -92,3 +94,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 CART_SESSION_ID = 'cart'
+
+
+
