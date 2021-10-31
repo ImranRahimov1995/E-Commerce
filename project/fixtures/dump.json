@@ -1,0 +1,154 @@
+[
+    {
+        "model": "shop.category",
+        "pk": 1,
+        "fields": {
+            "name": "Cigarette",
+            "slug": "cigarette"
+        }
+    },
+    {
+        "model": "shop.category",
+        "pk": 2,
+        "fields": {
+            "name": "Whiskey",
+            "slug": "whiskey"
+        }
+    },
+    {
+        "model": "shop.category",
+        "pk": 3,
+        "fields": {
+            "name": "Tea",
+            "slug": "tea"
+        }
+    },
+    {
+        "model": "shop.category",
+        "pk": 4,
+        "fields": {
+            "name": "Coffee",
+            "slug": "coffee"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 1,
+        "fields": {
+            "category": 1,
+            "name": "Kent",
+            "slug": "kent",
+            "image": "products/2021/10/31/kent.jpg",
+            "description": "Curabitur nec nisl ex. Aliquam risus sem, finibus",
+            "price": "15.00",
+            "created": "2021-10-31T08:30:57.936Z",
+            "updated": "2021-10-31T08:30:57.936Z",
+            "available": true
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 2,
+        "fields": {
+            "category": 1,
+            "name": "Mallboro",
+            "slug": "mallboro",
+            "image": "products/2021/10/31/mallbro.jpg",
+            "description": "Curabitur nec nisl ex. Aliquam risus sem, finibus",
+            "price": "20.00",
+            "created": "2021-10-31T08:31:22.971Z",
+            "updated": "2021-10-31T08:31:22.972Z",
+            "available": true
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 3,
+        "fields": {
+            "category": 4,
+            "name": "Nescafe",
+            "slug": "nescafe",
+            "image": "products/2021/10/31/nescafe.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec nisl ex. Aliquam risus sem, finibus ac risus a, tincidunt bibendum risus. Curabitur et tortor felis. Nullam volutpat pretium nunc, ac vulputate urna sodales et. Ut fermentum eget felis nec mattis. Maecenas nec nulla ex.",
+            "price": "6.99",
+            "created": "2021-10-31T08:32:20.354Z",
+            "updated": "2021-10-31T08:32:20.354Z",
+            "available": true
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 4,
+        "fields": {
+            "category": 4,
+            "name": "Jacobs",
+            "slug": "jacobs",
+            "image": "products/2021/10/31/jacobs.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec nisl ex. Aliquam risus sem, finibus ac risus a, tincidunt bibendum risus. Curabitur et tortor felis. Nullam volutpat pretium nunc, ac vulputate urna sodales et. Ut fermentum eget felis nec mattis. Maecenas nec nulla ex. Vestibulum vitae luctus velit, luctus tincidunt dolor. Phasellus efficitur, leo vel efficitur tincidunt, odio felis venenatis leo, sed sodales sapien ipsum a sem. Donec eu convallis ante. Suspendisse cursus sagittis pharetra. Donec egestas malesuada velit nec lacinia. Nullam sed tincidunt libero. Nunc nec neque luctus, viverra urna in, ullamcorper ex.",
+            "price": "11.99",
+            "created": "2021-10-31T08:32:43.167Z",
+            "updated": "2021-10-31T08:32:43.167Z",
+            "available": true
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 5,
+        "fields": {
+            "category": 3,
+            "name": "Lipton-black",
+            "slug": "lipton-black",
+            "image": "products/2021/10/31/blacktea.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec nisl ex. Aliquam risus sem, finibus ac risus a, tincidunt bibendum risus. Curabitur et tortor felis. Nullam volutpat pretium nunc, ac vulputate urna sodales et. Ut fermentum eget felis nec mattis. Maecenas nec nulla ex. Vestibulum vitae luctus velit, luctus tincidunt dolor. Phasellus efficitur, leo vel efficitur tincidunt, odio felis venenatis leo, sed sodales sapien ipsum a sem. Donec eu convallis ante. Suspendisse cursus sagittis pharetra. Donec egestas malesuada velit nec lacinia. Nullam sed tincidunt libero. Nunc nec neque luctus, viverra urna in, ullamcorper ex.",
+            "price": "10.00",
+            "created": "2021-10-31T08:33:05.282Z",
+            "updated": "2021-10-31T08:33:05.282Z",
+            "available": true
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 6,
+        "fields": {
+            "category": 3,
+            "name": "Lipton-green",
+            "slug": "lipton-green",
+            "image": "products/2021/10/31/greentea.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec nisl ex. Aliquam risus sem, finibus ac risus a, tincidunt bibendum risus. Curabitur et tortor felis. Nullam volutpat pretium nunc, ac vulputate urna sodales et. Ut fermentum eget felis nec mattis. Maecenas nec nulla ex. Vestibulum vitae luctus velit, luctus tincidunt dolor. Phasellus efficitur, leo vel efficitur tincidunt, odio felis venenatis leo, sed sodales sapien ipsum a sem. Donec eu convallis ante. Suspendisse cursus sagittis pharetra. Donec egestas malesuada velit nec lacinia. Nullam sed tincidunt libero. Nunc nec neque luctus, viverra urna in, ullamcorper ex.",
+            "price": "15.00",
+            "created": "2021-10-31T08:34:32.492Z",
+            "updated": "2021-10-31T08:34:32.492Z",
+            "available": true
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 7,
+        "fields": {
+            "category": 2,
+            "name": "Jack Daniels",
+            "slug": "jack-daniels",
+            "image": "products/2021/10/31/jackdaniels.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec nisl ex. Aliquam risus sem, finibus ac risus a, tincidunt bibendum risus. Curabitur et tortor felis. Nullam volutpat pretium nunc, ac vulputate urna sodales et. Ut fermentum eget felis nec mattis. Maecenas nec nulla ex. Vestibulum vitae luctus velit, luctus tincidunt dolor. Phasellus efficitur, leo vel efficitur tincidunt, odio felis venenatis leo, sed sodales sapien ipsum a sem. Donec eu convallis ante. Suspendisse cursus sagittis pharetra. Donec egestas malesuada velit nec lacinia. Nullam sed tincidunt libero. Nunc nec neque luctus, viverra urna in, ullamcorper ex.",
+            "price": "50.00",
+            "created": "2021-10-31T08:34:49.624Z",
+            "updated": "2021-10-31T08:34:49.624Z",
+            "available": true
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 8,
+        "fields": {
+            "category": 2,
+            "name": "Jim Beam",
+            "slug": "jim-beam",
+            "image": "products/2021/10/31/jimbeam.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec nisl ex. Aliquam risus sem, finibus ac risus a, tincidunt bibendum risus. Curabitur et tortor felis. Nullam volutpat pretium nunc, ac vulputate urna sodales et. Ut fermentum eget felis nec mattis. Maecenas nec nulla ex. Vestibulum vitae luctus velit, luctus tincidunt dolor. Phasellus efficitur, leo vel efficitur tincidunt, odio felis venenatis leo, sed sodales sapien ipsum a sem. Donec eu convallis ante. Suspendisse cursus sagittis pharetra. Donec egestas malesuada velit nec lacinia. Nullam sed tincidunt libero. Nunc nec neque luctus, viverra urna in, ullamcorper ex.",
+            "price": "60.00",
+            "created": "2021-10-31T08:36:11.443Z",
+            "updated": "2021-10-31T08:36:11.443Z",
+            "available": true
+        }
+    }
+]
