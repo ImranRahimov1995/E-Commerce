@@ -6,6 +6,8 @@ services:
     build:
       context: ./docker/postgres
       dockerfile: Dockerfile
+    environment: 
+      - POSTGRES_PASSWORD=devpass
     volumes:
       - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
