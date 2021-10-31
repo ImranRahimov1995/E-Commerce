@@ -25,17 +25,37 @@ This is E-Commerce project my lesson-project which i learned from  book
 You can see all installed library and relations in project/requirements.txt
 
 _________________________________________________________________________________
-# Get started
+# Get started for local settings
 
 1. git clone https://github.com/ImranRahimov1995/E-Commerce-Mele.git
-2. python3 -m venv venv || source venv/bin/activate
+_________________________________________________________________________________
 
-All commands must starting from project/
-pip3 install -r requirements.txt
+# All commands must starting from project/
 
-# This is your local settings export your local settings for ENVOIRMENT and run some commands:
+1. Run this command for installing modules and activate venv:
+. ./smart-command/install.sh
 
-open project/config/settings
+2. If you want load fixtures in your db
+. ./smart-command/fixtures.sh
 
-run this command:
-. ./local_env.sh
+3. Open new terminal , go to project/
+. ./smart-command/run-redis.sh
+
+4. Open new terminal , go to project/
+. ./smart-command/run-celery.sh
+
+5 You need to create project/config/settings/pro.py (for right working all systems)
+
+#EXAMPLE 
+
+BRAINTREE_MERCHANT_ID = ' '     # ID SELLER. \
+BRAINTREE_PUBLIC_KEY = ' '      # PUBLIC KEY. \
+BRAINTREE_PRIVATE_KEY = ' '     # PRIVATE KEY. 
+
+You can get this from https://www.braintreepayments.com/sandbox
+
+_________________________________________________________________________________
+
+
+
+
