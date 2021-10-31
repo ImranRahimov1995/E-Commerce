@@ -3,9 +3,9 @@ from django.core.management.utils import get_random_secret_key
 
 SECRET_KEY = get_random_secret_key
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 DATABASES = {
     'default': {
@@ -26,8 +26,8 @@ EMAIL_HOST_PASSWORD = os.environ.get('MYPASS')
 
 """
 
-CELERY_BROKER_URL = "redis://127.0.0.1:6379/0"
-CELERY_RESULT_BACKEND = "redis://127.0.0.1:6379/0"
+CELERY_BROKER_URL = "redis://redis:6379/0"
+CELERY_RESULT_BACKEND = "redis://redis:6379/0"
 
 
 
@@ -61,6 +61,6 @@ if check_production_env:
             BRAINTREE_PRIVATE_KEY
         )
 
-REDIS_HOST = 'localhost'
+REDIS_HOST = 'redis'
 REDIS_PORT = 6379
 REDIS_DB = 1
