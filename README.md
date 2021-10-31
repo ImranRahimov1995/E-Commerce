@@ -52,10 +52,89 @@ BRAINTREE_MERCHANT_ID = ' '     # ID SELLER. \
 BRAINTREE_PUBLIC_KEY = ' '      # PUBLIC KEY. \
 BRAINTREE_PRIVATE_KEY = ' '     # PRIVATE KEY. 
 
-You can get this from https://www.braintreepayments.com/sandbox
+#### You can get this from https://www.braintreepayments.com/sandbox
 
 _________________________________________________________________________________
+# For testing in docker with nginx / gunicorn / postgres / -with loaded fixtures
+
+
+1. git clone https://github.com/ImranRahimov1995/E-Commerce-Mele.git
+2. git checkout dockerize
+
+_________________________________________________________________________________
+# Now you need to create 2 files
+
+#### E-commerce/docker/postgres/init.sql:
+
+
+CREATE USER username WITH PASSWORD 'devpass'; \
+CREATE DATABASE app_db; \
+GRANT ALL PRIVILEGES ON DATABASE app_db TO admin;
+
+________________________________________________________
+#### E-commerce/project/config/settings/pro.py:
+
+
+from .base import *
+from django.core.management.utils import get_random_secret_key
+
+SECRET_KEY = get_random_secret_key
+
+DEBUG = False
+
+ALLOWED_HOSTS = ['*']
+
+DATABASES = { \
+    'default': { \
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', \
+        'NAME': 'app_db', \
+        'USER': 'admin', \
+        'PASSWORD': 'devpass', \
+        'HOST': "postgresdb", \
+        'PORT': 5432, \
+    } \
+} 
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
+EMAIL_USE_TLS = True \
+EMAIL_HOST = 'smtp.gmail.com' \
+EMAIL_PORT = 587 \
+EMAIL_HOST_USER = 'YOUR_GMAIL_ADDRESS' \
+EMAIL_HOST_PASSWORD = 'PASSWORD'
+
+
+CELERY_BROKER_URL = "redis://redis:6379/0" \
+CELERY_RESULT_BACKEND = "redis://redis:6379/0" 
+
+
+BRAINTREE_MERCHANT_ID = ' '     # ID SELLER. \
+BRAINTREE_PUBLIC_KEY = ' '      # PUBLIC KEY. \
+BRAINTREE_PRIVATE_KEY = ' '     # PRIVATE KEY. 
+
+##### You can get this from https://www.braintreepayments.com/sandbox
 
 
 
+from braintree import Configuration, Environment
 
+Configuration.configure( \
+        Environment.Sandbox, \
+            BRAINTREE_MERCHANT_ID, \
+            BRAINTREE_PUBLIC_KEY, \
+            BRAINTREE_PRIVATE_KEY \
+    ) 
+
+
+REDIS_HOST = 'redis' \
+REDIS_PORT = 6379 \
+REDIS_DB = 1 
+
+________________________________________________________
+Now you can build your app and test it in real case
+
+cd E-Commerce/
+
+docker-compose build \
+docker-compose up 
