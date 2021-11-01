@@ -35,11 +35,11 @@ ________________________________________________________________________________
 1. Run this command for installing modules and activate venv:
 . ./smart-commands/install.sh
 
-2. If you want load fixtures in your db
+2. If you want load fixtures in your db \
 . ./smart-commands/fixtures.sh
 
 4. Open new terminal , go to project/
-. ./smart-command/run-celery.sh
+. ./smart-commands/run-celery.sh \
 _________________________________________________________________________________
 # For testing in docker with nginx / gunicorn / postgres / -with loaded fixtures
 
@@ -48,16 +48,7 @@ ________________________________________________________________________________
 2. git checkout dockerize
 
 _________________________________________________________________________________
-# Now you need to create 2 files
 
-#### E-commerce/docker/postgres/init.sql:
-
-
-CREATE USER username WITH PASSWORD 'devpass'; \
-CREATE DATABASE app_db; \
-GRANT ALL PRIVILEGES ON DATABASE app_db TO admin;
-
-________________________________________________________
 ## For send emails 
 enter your mail in docker-compose.yaml
   web:
