@@ -9,4 +9,3 @@ cd project/
 pip3 install -r requirements.txt
 python3 manage.py migrate --settings=config.settings.local
 python3 manage.py collectstatic --noinput
-python3 manage.py createsuperuser
