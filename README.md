@@ -138,3 +138,7 @@ cd E-Commerce/
 
 docker-compose build \
 docker-compose up 
+
+### Admin credentials:
+login : admin
+password: 123
