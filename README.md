@@ -140,5 +140,5 @@ docker-compose build \
 docker-compose up 
 
 ### Admin credentials:
-login : admin
+login : admin \
 password: 123
