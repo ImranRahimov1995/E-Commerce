@@ -33,27 +33,13 @@ ________________________________________________________________________________
 # All commands must starting from project/
 
 1. Run this command for installing modules and activate venv:
-. ./smart-command/install.sh
+. ./smart-commands/install.sh
 
 2. If you want load fixtures in your db
-. ./smart-command/fixtures.sh
-
-3. Open new terminal , go to project/
-. ./smart-command/run-redis.sh
+. ./smart-commands/fixtures.sh
 
 4. Open new terminal , go to project/
 . ./smart-command/run-celery.sh
-
-5 You need to create project/config/settings/pro.py (for right working all systems)
-
-#EXAMPLE 
-
-BRAINTREE_MERCHANT_ID = ' '     # ID SELLER. \
-BRAINTREE_PUBLIC_KEY = ' '      # PUBLIC KEY. \
-BRAINTREE_PRIVATE_KEY = ' '     # PRIVATE KEY. 
-
-#### You can get this from https://www.braintreepayments.com/sandbox
-
 _________________________________________________________________________________
 # For testing in docker with nginx / gunicorn / postgres / -with loaded fixtures
 
@@ -72,65 +58,13 @@ CREATE DATABASE app_db; \
 GRANT ALL PRIVILEGES ON DATABASE app_db TO admin;
 
 ________________________________________________________
-#### E-commerce/project/config/settings/pro.py:
-
-
-from .base import *
-from django.core.management.utils import get_random_secret_key
-
-SECRET_KEY = get_random_secret_key
-
-DEBUG = False
-
-ALLOWED_HOSTS = ['*']
-
-DATABASES = { \
-    'default': { \
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', \
-        'NAME': 'app_db', \
-        'USER': 'admin', \
-        'PASSWORD': 'devpass', \
-        'HOST': "postgresdb", \
-        'PORT': 5432, \
-    } \
-} 
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-
-EMAIL_USE_TLS = True \
-EMAIL_HOST = 'smtp.gmail.com' \
-EMAIL_PORT = 587 \
-EMAIL_HOST_USER = 'YOUR_GMAIL_ADDRESS' \
-EMAIL_HOST_PASSWORD = 'PASSWORD'
-
-
-CELERY_BROKER_URL = "redis://redis:6379/0" \
-CELERY_RESULT_BACKEND = "redis://redis:6379/0" 
-
-
-BRAINTREE_MERCHANT_ID = ' '     # ID SELLER. \
-BRAINTREE_PUBLIC_KEY = ' '      # PUBLIC KEY. \
-BRAINTREE_PRIVATE_KEY = ' '     # PRIVATE KEY. 
-
-##### You can get this from https://www.braintreepayments.com/sandbox
-
-
-
-from braintree import Configuration, Environment
-
-Configuration.configure( \
-        Environment.Sandbox, \
-            BRAINTREE_MERCHANT_ID, \
-            BRAINTREE_PUBLIC_KEY, \
-            BRAINTREE_PRIVATE_KEY \
-    ) 
-
-
-REDIS_HOST = 'redis' \
-REDIS_PORT = 6379 \
-REDIS_DB = 1 
-
+## For send emails 
+enter your mail in docker-compose.yaml
+  web:
+    restart: always
+    environment:
+      - MY_EMAIL=''
+      - MY_EMAIL_PASSWORD=''
 ________________________________________________________
 Now you can build your app and test it in real case
 
@@ -142,3 +76,16 @@ docker-compose up
 ### Admin credentials:
 login : admin \
 password: 123
+
+-----------------
+# FOR PAYMENT :
+
+cart : 5555 5555 5555 4444 \
+CVV : 123 \
+Expire Date : 02\24  
+
+## FOR Coupon- discount:
+
+input "Discount"  
+
+-----------------
