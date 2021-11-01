@@ -5,7 +5,7 @@ SECRET_KEY = get_random_secret_key
 
 DEBUG = False
 
-ALLOWED_HOSTS = [os.getenv('PUBLIC_IP','0.0.0.0')]
+ALLOWED_HOSTS = ['*']
 
 DATABASES = {
      'default': {
@@ -43,7 +43,18 @@ BRAINTREE_MERCHANT_ID = os.getenv('BRAINTREE_MERCHANT_ID','trhv67z232ntzz63') # 
 BRAINTREE_PUBLIC_KEY = os.getenv('BRAINTREE_PUBLIC_KEY','z6r3qcbkwwdhbk4q') # Public key.
 BRAINTREE_PRIVATE_KEY = os.getenv('BRAINTREE_PRIVATE_KEY','2abd6474f8fe1ca37072b851aa949095') # Secret key
 
+from braintree import Configuration, Environment
+
+Configuration.configure(
+        Environment.Sandbox,
+        BRAINTREE_MERCHANT_ID,
+        BRAINTREE_PUBLIC_KEY,
+        BRAINTREE_PRIVATE_KEY
+    )
 
 REDIS_HOST = 'redis'
 REDIS_PORT = 6379
 REDIS_DB = 1
+
+CELERY_BROKER_URL = "redis://redis:6379/0"
+CELERY_RESULT_BACKEND = "redis://redis:6379/0"

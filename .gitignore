@@ -96,4 +96,3 @@ venv
 project/media
 project/static
 project/config/settings/pro.py
-docker/postgres/init.sql
