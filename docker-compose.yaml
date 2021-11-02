@@ -8,7 +8,6 @@ services:
       dockerfile: Dockerfile
     environment: 
       - POSTGRES_PASSWORD=devpass
-
     volumes:
       - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
@@ -24,8 +23,6 @@ services:
     restart: always
     environment:
       - DJANGO_SETTINGS_MODULE=config.settings.prod
-      - MY_EMAIL=''
-      - MY_EMAIL_PASSWORD=''
     volumes: 
       - ./project:/project
     build:
@@ -39,8 +36,11 @@ services:
     restart: always
     environment:
       - DJANGO_SETTINGS_MODULE=config.settings.prod
+      - MY_EMAIL_PASSWORD=
+      - MY_EMAIL=
     depends_on:
       - redis
+      - postgresdb
     build:
       context: ./project
       dockerfile: DockerfileCelery
@@ -55,6 +55,8 @@ services:
       - ./project/media/:/media
 
     depends_on: 
+      - postgresdb
       - web
+      - worker
     ports: 
       - "80:80"
