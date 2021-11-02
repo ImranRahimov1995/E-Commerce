@@ -1,7 +1,7 @@
 # E-Commerce-Mele
 
 This is E-Commerce project my lesson-project which i learned from  book 
-
+http://139.162.178.110/
 # What's inside ?
 
 1. Base products with categories
