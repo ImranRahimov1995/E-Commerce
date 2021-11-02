@@ -27,7 +27,7 @@ You can see all installed library and relations in project/requirements.txt
 _________________________________________________________________________________
 # Get started for local settings
 
-1. git clone https://github.com/ImranRahimov1995/E-Commerce-Mele.git
+1. git clone https://github.com/ImranRahimov1995/E-Commerce.git
 _________________________________________________________________________________
 
 # All commands must starting from project/
