@@ -77,6 +77,6 @@ Expire Date : 02\24
 
 ## FOR Coupon- discount:
 
-input "Discount"  
+input "DISCOUNT"  
 
 -----------------
