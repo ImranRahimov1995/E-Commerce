@@ -23,6 +23,8 @@ services:
     restart: always
     environment:
       - DJANGO_SETTINGS_MODULE=config.settings.prod
+      - MY_EMAIL_PASSWORD=
+      - MY_EMAIL=
     volumes: 
       - ./project:/project
     build:
@@ -38,6 +40,8 @@ services:
       - DJANGO_SETTINGS_MODULE=config.settings.prod
       - MY_EMAIL_PASSWORD=
       - MY_EMAIL=
+    volumes: 
+      - ./project:/project
     depends_on:
       - redis
       - postgresdb
