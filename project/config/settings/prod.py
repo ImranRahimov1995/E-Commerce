@@ -1,7 +1,6 @@
 from .base import *
-from django.core.management.utils import get_random_secret_key
 
-SECRET_KEY = get_random_secret_key
+ADMINS= [('admin','imash.odessahouse@gmail.com')]
 
 DEBUG = False
 
@@ -20,13 +19,14 @@ DATABASES = {
 
 
 
+
+
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = os.getenv("MY_EMAIL",'')
-EMAIL_HOST_PASSWORD = os.getenv("MY_EMAIL_PASSWORD",'')
-
-
+EMAIL_HOST_USER = os.environ.get('MYEMAIL')
+EMAIL_HOST_PASSWORD = os.environ.get('MYPASS')
+DEFAULT_FROM_EMAIL = 'imash.odessahouse@gmail.com'
 
 def check_env():
     if EMAIL_HOST_USER != '':
@@ -57,4 +57,4 @@ REDIS_PORT = 6379
 REDIS_DB = 1
 
 CELERY_BROKER_URL = "redis://redis:6379/0"
-CELERY_RESULT_BACKEND = "redis://redis:6379/0"
+CELERY_RESULT_BACKEND = "redis://redis:6379/0"https://youtube.impropy.me/

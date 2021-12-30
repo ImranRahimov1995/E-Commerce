@@ -9,6 +9,7 @@ services:
     environment: 
       - POSTGRES_PASSWORD=devpass
     volumes:
+      - ./docker/postgres/data/:/var/lib/postgresql/data
       - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "5432:5432"
@@ -16,6 +17,8 @@ services:
   redis:
     restart: always
     image: redis
+    volumes:
+     - $PWD/redis-data:/var/lib/redis
     ports:
       - "6379:6379"
 
@@ -23,8 +26,8 @@ services:
     restart: always
     environment:
       - DJANGO_SETTINGS_MODULE=config.settings.prod
-      - MY_EMAIL_PASSWORD=
-      - MY_EMAIL=
+      - MY_EMAIL_PASSWORD=""
+      - MY_EMAIL=""
     volumes: 
       - ./project:/project
     build:
@@ -38,8 +41,8 @@ services:
     restart: always
     environment:
       - DJANGO_SETTINGS_MODULE=config.settings.prod
-      - MY_EMAIL_PASSWORD=
-      - MY_EMAIL=
+      - MY_EMAIL_PASSWORD=""
+      - MY_EMAIL=''
     volumes: 
       - ./project:/project
     depends_on:
@@ -51,13 +54,13 @@ services:
     command: [ "celery","-A","config" ,"worker" ,"--loglevel=info" ]
       
   nginx:
+    restart: always
     build: 
       context: ./docker/nginx
       dockerfile: Dockerfile
     volumes: 
       - ./project/static/:/static
       - ./project/media/:/media
-
     depends_on: 
       - postgresdb
       - web

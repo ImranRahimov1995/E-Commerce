@@ -1,4 +1,3 @@
-
 CREATE USER admin WITH PASSWORD 'devpass';
 
 CREATE DATABASE app_db;
