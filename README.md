@@ -1,7 +1,8 @@
 # E-Commerce-Mele
 
 This is E-Commerce project my lesson-project which i learned from  book 
-http://139.162.178.110/
+https://e-commerce.impropy.me/
+
 
 # What's inside ?
 
@@ -50,17 +51,13 @@ ________________________________________________________________________________
 
 _________________________________________________________________________________
 
-## For send emails 
-enter your mail in docker-compose.yaml
-  web:
-    restart: always
-    environment:
-      - MY_EMAIL=''
-      - MY_EMAIL_PASSWORD=''
+
 ________________________________________________________
 Now you can build your app and test it in real case
 
 cd E-Commerce/
+you need  running local redis-server
+and nginx local
 
 docker-compose build \
 docker-compose up 
