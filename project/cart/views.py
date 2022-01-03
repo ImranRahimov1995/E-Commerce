@@ -26,7 +26,8 @@ def cart_remove(request, product_id):
     cart = Cart(request)
     product = get_object_or_404(Product, id=product_id)
     cart.remove(product)
-    if cart.__len__ == 0:
+    if len(cart) == 0:
+        print(len(cart),'is zero')
         return redirect('shop:product_list')
     return redirect('cart:cart_detail')
 
