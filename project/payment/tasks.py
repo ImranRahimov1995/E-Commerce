@@ -17,7 +17,7 @@ def send_order_pdf(order_id):
     email = EmailMessage(subject,
                             message,
                             from_email=EMAIL_HOST_USER,
-                            to=order.email)
+                            to=[order.email])
     # generate PDF
     html = render_to_string('orders/order/pdf.html', {'order': order})
     out = BytesIO()
