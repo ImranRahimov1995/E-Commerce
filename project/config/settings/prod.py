@@ -12,7 +12,7 @@ DATABASES = {
          'NAME': os.getenv('DB_APP','app_db'),
          'USER': os.getenv('DB_USER','admin'),
          'PASSWORD': os.getenv('DB_PASSWORD','devpass'),
-         'HOST': os.getenv("DB_HOST","postgresdb"),
+         'HOST': os.getenv("DB_HOST","127.0.0.1"),
          'PORT': os.getenv("DB_PORT","5432"),
      }
 }
@@ -52,9 +52,9 @@ Configuration.configure(
         BRAINTREE_PRIVATE_KEY
     )
 
-REDIS_HOST = 'redis'
+REDIS_HOST = '127.0.0.1'
 REDIS_PORT = 6379
 REDIS_DB = 1
 
-CELERY_BROKER_URL = "redis://redis:6379/0"
-CELERY_RESULT_BACKEND = "redis://redis:6379/0"https://youtube.impropy.me/
+CELERY_BROKER_URL = "redis://127.0.0.1:6379/0"
+CELERY_RESULT_BACKEND = "redis://127.0.0.1:6379/0"
