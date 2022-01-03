@@ -4,7 +4,7 @@ from orders.models import Order
 from  django.template.loader import render_to_string
 from django.core.mail import EmailMessage
 from django.conf import settings
-
+from config.settings.prod import EMAIL_HOST_USER
 import weasyprint
 from io import BytesIO
 
@@ -16,6 +16,7 @@ def send_order_pdf(order_id):
     message = 'Please, find attached the invoice for your recent purchase.'
     email = EmailMessage(subject,
                             message,
+                            from_email=EMAIL_HOST_USER,
                             to=order.email)
     # generate PDF
     html = render_to_string('orders/order/pdf.html', {'order': order})

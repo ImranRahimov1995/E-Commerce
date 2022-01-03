@@ -1,6 +1,7 @@
 from django.core.mail import send_mail
 from .models import Order
 from config.celery import app
+from config.settings.prod import EMAIL_HOST_USER
 
 
 @app.task
@@ -12,5 +13,7 @@ def order_created(order_id):
                     Your order id is {}.'.format(order.first_name,
                                                  order.id)
     mail_sent = send_mail(subject,
-                          message,recipient_list=[order.email])
+                          message,
+                          from_email=EMAIL_HOST_USER,
+                          recipient_list=[order.email])
     return mail_sent
