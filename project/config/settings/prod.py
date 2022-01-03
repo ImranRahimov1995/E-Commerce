@@ -19,14 +19,17 @@ DATABASES = {
 
 
 
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = os.environ.get('MYEMAIL','smtp_sender@mail.ru')
+EMAIL_HOST_PASSWORD = os.environ.get('MYPASS','v0hRbpS3bfB3PRhx2Zvi')
+DEFAULT_FROM_EMAIL = 'smtp_sender@mail.ru'
 
-
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = os.environ.get('MYEMAIL')
-EMAIL_HOST_PASSWORD = os.environ.get('MYPASS')
-DEFAULT_FROM_EMAIL = 'imash.odessahouse@gmail.com'
+# EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = os.environ.get('MYEMAIL')
+# EMAIL_HOST_PASSWORD = os.environ.get('MYPASS')
 
 def check_env():
     if EMAIL_HOST_USER != '':

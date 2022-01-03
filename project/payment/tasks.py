@@ -16,8 +16,7 @@ def send_order_pdf(order_id):
     message = 'Please, find attached the invoice for your recent purchase.'
     email = EmailMessage(subject,
                             message,
-                            'imash.odessahouse@gmail.com',
-                            [order.email])
+                            to=order.email)
     # generate PDF
     html = render_to_string('orders/order/pdf.html', {'order': order})
     out = BytesIO()

@@ -12,7 +12,5 @@ def order_created(order_id):
                     Your order id is {}.'.format(order.first_name,
                                                  order.id)
     mail_sent = send_mail(subject,
-                          message,
-                          'imash.odessahouse@gmail.com',
-                          [order.email])
+                          message,recipient_list=[order.email])
     return mail_sent
