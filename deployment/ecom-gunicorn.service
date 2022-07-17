@@ -1,0 +1,18 @@
+[Unit]
+Description=gunicorndaemon
+Requires=ecom-gunicorn.socket
+After=network.target
+
+[Service]
+User=django_user
+Group=www-data
+WorkingDirectory=/home/django_user/E-Commerce/project
+EnvironmentFile=/home/django_user/E-Commerce/project/env
+ExecStart=/home/django_user/E-Commerce/venv/bin/gunicorn \
+          --access-logfile - \
+          --workers 2 \
+          --bind unix:/run/ecom-gunicorn.sock \
+          config.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
