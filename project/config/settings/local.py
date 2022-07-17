@@ -1,7 +1,5 @@
 from .base import *
-from django.core.management.utils import get_random_secret_key
 
-SECRET_KEY = get_random_secret_key
 
 DEBUG = True
 
@@ -14,20 +12,15 @@ DATABASES = {
     }
 }
 
+
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-
-CELERY_BROKER_URL = "redis://127.0.0.1:6379/0"
-CELERY_RESULT_BACKEND = "redis://127.0.0.1:6379/0"
-
-
 
 
 #PAYMENT ID_PASS
 #You need have 3 constant in pro.py 
 #https://www.braintreepayments.com/sandbox
 
-production_env_path = os.path.join(BASE_DIR / 'config/settings/pro.py')
+production_env_path = os.path.join(BASE_DIR / 'config/settings/prod.py')
 check_production_env = os.path.exists(production_env_path)
 
 

@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+SECRET_KEY = os.getenv("SECRET_KEY",'4rkbk&a6x%*+bi(atw8#w$#cpz9d$#8x^ni0iy55ix0gv6dxpg')
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -92,7 +93,8 @@ MEDIA_ROOT = BASE_DIR / 'media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-
+CELERY_BROKER_URL = "redis://127.0.0.1:6379/0"
+CELERY_RESULT_BACKEND = "redis://127.0.0.1:6379/0"
 CART_SESSION_ID = 'cart'
 
 
